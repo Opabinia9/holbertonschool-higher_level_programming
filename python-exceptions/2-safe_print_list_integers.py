@@ -13,4 +13,4 @@ def safe_print_list_integers(my_list=[], x=0):
         finally:
             y += 1
     print()
-    return y
+    return count 
