@@ -41,3 +41,9 @@ add_integer accepts 1 - 2 arguments, the second arguments defualts to 98 if not 
     Traceback (most recent call last):
         ...
     TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
+add_integer returns an int:
+
+    >>> a = add_integer(5.03, 5.00)
+    >>> type(a)
+    <class 'int'>
