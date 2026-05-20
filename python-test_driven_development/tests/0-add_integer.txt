@@ -42,8 +42,18 @@ add_integer accepts 1 - 2 arguments, the second arguments defualts to 98 if not 
         ...
     TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
 
-add_integer returns an int:
+add_integer converts the args to ints and then returns an int, so the args bust be convertable:
 
     >>> a = add_integer(5.03, 5.00)
     >>> type(a)
     <class 'int'>
+
+    >>> add_integer(float('nan'), 5)
+    Traceback (most recent call last):
+        ...
+    ValueError: cannot convert float NaN to integer
+
+    >>> add_integer(float('inf'), 5)
+    Traceback (most recent call last):
+        ...
+    OverflowError: cannot convert float infinity to integer
