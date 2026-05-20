@@ -37,6 +37,18 @@ arg 1 must be a list of lists of ints:
     >>> matrix_divided([[4,5,5]], 3)
     [[1.33, 1.67, 1.67]]
 
+each row in the matrix passed as arg1 must be the same length:
+
+    >>> matix = [
+    ...     [1, 2, 3, 4],
+    ...     [1.0, 2.0, 3.0, 4.0, 5.0],
+    ... ]
+
+    >>> matrix_divided(matix, 2)
+    Traceback (most recent call last):
+        ...
+    TypeError: Each row of the matrix must have the same size
+
 arg 2 must be a positive int or float:
 
     >>> matrix_divided(matrix, 'three')
@@ -51,3 +63,23 @@ arg 2 must be a positive int or float:
 
     >>> matrix_divided(matrix, 354)
     [[0.0, 0.01, 0.01], [0.01, 0.01, 0.02]]
+
+matrix_divided must be passed exactly two arguments:
+
+    >>> matrix_divided()
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+    >>> matrix_divided([[1,]])
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+    >>> matrix_divided([[1,]], 4)
+    [[0.25]]
+
+    >>> matrix_divided([[1,]], 4, 4)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix_divided() takes 2 positional arguments but 3 were given
