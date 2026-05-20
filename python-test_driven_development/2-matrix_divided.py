@@ -1,5 +1,9 @@
 #!/usr/bin/python3
+'''A module to hold one function'''
+
+
 def matrix_divided(matrix, div):
+    '''divide a matrix by a value'''
     if (
         type(matrix) is not list
         or not all(type(x) is list for x in matrix)
