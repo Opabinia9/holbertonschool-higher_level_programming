@@ -1,0 +1,52 @@
+ The ``5-text_indentation`` module
+===========================
+
+Using ``text_indentation``
+---------------------
+
+first import ``text_indentation`` from the ``5-text_indentation`` module:
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+now to use it:
+
+    >>> text_indentation('a string, split me here. here too? or finally: there.')
+    a string, split me here.
+    <BLANKLINE>
+    here too?
+    <BLANKLINE>
+    or finally:
+    <BLANKLINE>
+    there.
+    <BLANKLINE>
+
+text_indentation takes one arg 'text':
+
+    >>> text_indentation()
+    Traceback (most recent call last):
+        ...
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
+    >>> text_indentation('')
+
+    >>> text_indentation('','')
+    Traceback (most recent call last):
+        ...
+    TypeError: text_indentation() takes 1 positional argument but 2 were given
+
+text must be a string:
+
+    >>> text_indentation(5)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
+    >>> text_indentation(True)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
+    >>> text_indentation(['here', 'we', 'arent'])
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
