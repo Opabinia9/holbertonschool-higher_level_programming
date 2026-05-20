@@ -83,3 +83,7 @@ matrix_divided must be passed exactly two arguments:
     Traceback (most recent call last):
         ...
     TypeError: matrix_divided() takes 2 positional arguments but 3 were given
+
+this is what happens when dividing by inf:
+    >>> matrix_divided(matrix, float('inf'))
+    [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
