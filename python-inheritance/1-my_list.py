@@ -9,5 +9,6 @@ You are not allowed to import any module
 
 
 class MyList(list):
+    '''a class based on list'''
     def print_sorted(self):
         print(sorted(self))
