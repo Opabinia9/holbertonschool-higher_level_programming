@@ -1,0 +1,18 @@
+>>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
+
+>>> geo = BaseGeometry()
+
+>>> geo.area()
+Traceback (most recent call last):
+	...
+Exception: area() is not implemented
+
+>>> geo.integer_validator("[value cannot be a string]", "bad value")
+Traceback (most recent call last):
+	...
+TypeError: [value cannot be a string] must be an integer
+
+>>> geo.integer_validator("[value must be above 0]", -555)
+Traceback (most recent call last):
+	...
+ValueError: [value must be above 0] must be greater than 0
