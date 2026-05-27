@@ -7,12 +7,12 @@ Traceback (most recent call last):
 	...
 Exception: area() is not implemented
 
->>> geo.integer_validator()
+>>> geo.integer_validator() # doctest: +ELLIPSIS
 Traceback (most recent call last):
 	...
 TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
->>> geo.integer_validator("age")
+>>> geo.integer_validator("age") # doctest: +ELLIPSIS
 Traceback (most recent call last):
 	...
 TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
