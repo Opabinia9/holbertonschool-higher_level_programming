@@ -17,6 +17,8 @@ Traceback (most recent call last):
 	...
 TypeError: ... missing 1 required positional argument: 'value'
 
+>>> geo.integer_validator("age", 1)
+
 >>> geo.integer_validator("age", 0)
 Traceback (most recent call last):
 	...
