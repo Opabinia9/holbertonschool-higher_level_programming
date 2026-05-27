@@ -33,4 +33,4 @@ TypeError: '<' not supported between instances of 'str' and 'bool'
 >>> list2 = list1.print_sorted()
 [3, 5, 7, 7, 8, 9]
 >>> type(list2)
-<class 'NoneType'>
+<class '1-my_list.MyList'>
