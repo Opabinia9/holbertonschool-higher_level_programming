@@ -25,11 +25,9 @@ TypeError: '<' not supported between instances of 'str' and 'bool'
 >>> list1
 [7, 9, 3, 5, 7, 8, 55]
 
->>> list1 = []
+>>> list1 = MyList([])
 >>> list1.print_sorted()
-Traceback (most recent call last):
-	...
-AttributeError: 'list' object has no attribute 'print_sorted'
+[]
 
 >>> list1 = MyList([7,9,3,5,7,8])
 >>> list2 = list1.print_sorted()
