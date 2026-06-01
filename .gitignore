@@ -1,1 +1,6 @@
 __pycache__
+uv.lock
+ .idea
+ .python-version
+ .ruff_cache
+ pyproject.toml
