@@ -11,7 +11,7 @@ class Student:
         self.last_name = last_name
         self.age = age
 
-    def to_json(self, attrs: list | None = None) -> dict:
+    def to_json(self, attrs: list = None) -> dict:
         """Return dictionary repisentation of self.
 
         Returns:
