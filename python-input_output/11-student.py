@@ -27,4 +27,4 @@ class Student:
     def reload_from_json(self, json: dict) -> None:
         """Set atters from json."""
         for i, j in json.items():
-            setattr(object, i, j)
+            setattr(self, i, j)
