@@ -15,9 +15,9 @@ class CustomObject:
 
     def display(self) -> None:
         """Print instance atributes."""
-        print(
-            f"Name: {self.name} Age: {self.age} Is Student: {self.is_student}"
-        )
+        print(f"Name: {self.name}")
+        print(f"Age: {self.age}")
+        print(f"Is Student: {self.is_student}")
 
     def serialize(self, filename: str) -> None:
         """Save instance to file."""
