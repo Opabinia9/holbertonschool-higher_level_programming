@@ -25,7 +25,7 @@ class CustomObject:
             pickle.dump(self, file)
 
     @classmethod
-    def deserialize(cls, filename: str) -> object | None:
+    def deserialize(cls, filename: str) -> object:
         """Load instance from file.
 
         Returns:
