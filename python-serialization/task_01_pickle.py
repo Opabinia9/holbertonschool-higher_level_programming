@@ -21,8 +21,11 @@ class CustomObject:
 
     def serialize(self, filename: str) -> None:
         """Save instance to file."""
-        with open(filename, "wb") as file:
-            pickle.dump(self, file)
+        try:
+            with open(filename, "wb") as file:
+                pickle.dump(self, file)
+        except OSError:
+            return None
 
     @classmethod
     def deserialize(cls, filename: str) -> object:
@@ -36,4 +39,6 @@ class CustomObject:
             with open(filename, "rb") as file:
                 return pickle.load(file)
         except FileNotFoundError:
+            return None
+        except OSError:
             return None
