@@ -35,7 +35,7 @@ class CustomObject:
         try:
             with open(filename, "rb") as file:
                 obj = pickle.load(file)
-        except FileNotFoundError:
+        except Exception:
             return None
 
         if type(obj) is not cls:
