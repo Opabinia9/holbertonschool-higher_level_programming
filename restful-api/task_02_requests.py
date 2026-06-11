@@ -5,6 +5,8 @@ import requests
 import json
 import csv
 
+from requests.models import HTTPError
+
 
 def fetch_and_print_posts():
     """"""
@@ -20,10 +22,12 @@ def fetch_and_print_posts():
 
 def fetch_and_save_posts():
     """"""
+    headers = ["id", "title", "body"]
     r = requests.get("https://jsonplaceholder.typicode.com/posts")
 
     if r.status_code == 200:
         rlist = r.json()
         with open("posts.csv", "w", newline="") as file:
-            csvwriter = csv.DictWriter(file, rlist[0].keys())
+            csvwriter = csv.DictWriter(file, headers)
+            csvwriter.writeheader()
             csvwriter.writerows(rlist)
