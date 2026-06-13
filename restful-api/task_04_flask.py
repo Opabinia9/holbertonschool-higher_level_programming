@@ -58,13 +58,9 @@ def add_user() -> str:
         )
     users[username] = {x: data[x] for x in user_fields}
     return make_response(
-        jsonify({"message": "User Added", "user": users[username]}), 201
+        jsonify({"message": "User added", "user": users[username]}), 201
     )
 
-
-"""
-Return a confirmation message with the added user's data.
-"""
 
 if __name__ == "__main__":
     app.run()
