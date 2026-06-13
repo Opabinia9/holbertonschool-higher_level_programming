@@ -56,9 +56,9 @@ def add_user() -> str:
         return make_response(
             jsonify({"error": "Username already exists"}), 409
         )
-    users[username] = data
+    users[username] = {x: data[x] for x in user_fields}
     return make_response(
-        jsonify({"message": "User Added", username: users[username]}), 201
+        jsonify({"message": "User Added", "user": users[username]}), 201
     )
 
 
