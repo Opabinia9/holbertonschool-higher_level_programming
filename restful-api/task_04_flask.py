@@ -1,16 +1,11 @@
 #!/usr/bin/python3
 """M."""
 
-from typing import ValuesView
-
 from flask import Flask, jsonify, request, make_response
-import json
 
 app = Flask(__name__)
 
-database = {
-    "users": {"jane": {"name": "Jane", "age": 28, "city": "Los Angeles"}}
-}
+database = {}
 
 
 @app.route("/")
