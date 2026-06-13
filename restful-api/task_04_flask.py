@@ -58,7 +58,7 @@ def add_user() -> str:
         )
     users[username] = {x: data[x] for x in user_fields}
     return make_response(
-        {"message": "User Added", username: users[username]}, 201
+        jsonify({"message": "User Added", username: users[username]}), 201
     )
 
 
