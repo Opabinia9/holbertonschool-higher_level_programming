@@ -15,7 +15,7 @@ def query_database(username: str, password: str, database: str) -> None:
     db = MySQLdb.connect(host=HOST, port=PORT, user=USER, passwd=PASS, db=DB)
     cursor = db.cursor()
 
-    query = "SELECT * FROM cities ORDER BY id ASC"
+    query = """ SELECT cities.id, states.name, cities.name FROM cities INNER JOIN states ON cities.state_id=states.id ORDER BY cities.id ASC """
     cursor.execute(query)
     rows = cursor.fetchall()
 
