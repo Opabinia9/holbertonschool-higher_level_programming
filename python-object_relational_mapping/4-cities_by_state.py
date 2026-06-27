@@ -12,11 +12,21 @@ def query_database(username: str, password: str, database: str) -> None:
     USER = username
     PASS = password
     DB = database
-    db = MySQLdb.connect(host=HOST, port=PORT, user=USER, passwd=PASS, db=DB)
+    db = MySQLdb.connect(
+        host=HOST,
+        port=PORT,
+        user=USER,
+        passwd=PASS,
+        db=DB,
+    )
     cursor = db.cursor()
 
-    query = """ SELECT cities.id, cities.name, states.name FROM cities INNER JOIN states ON cities.state_id=states.id ORDER BY cities.id ASC """
-    cursor.execute(query)
+    cursor.execute(
+        "SELECT cities.id, cities.name, states.name "
+        "FROM cities "
+        "INNER JOIN states ON cities.state_id=states.id "
+        "ORDER BY cities.id ASC"
+    )
     rows = cursor.fetchall()
 
     for row in rows:
