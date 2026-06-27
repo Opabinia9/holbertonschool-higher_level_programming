@@ -17,13 +17,12 @@ def query_database(
     db = MySQLdb.connect(host=HOST, port=PORT, user=USER, passwd=PASS, db=DB)
     cursor = db.cursor()
 
-    query = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC"
+    query = "SELECT * FROM states WHERE BINARY name LIKE 'N%' ORDER BY id ASC"
     cursor.execute(query)
     rows = cursor.fetchall()
 
     for row in rows:
-        if row[1][0].isupper():
-            print(row)
+        print(row)
 
     cursor.close()
     db.close()
