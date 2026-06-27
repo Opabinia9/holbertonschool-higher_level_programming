@@ -1,12 +1,11 @@
 #!/usr/bin/python3
-# Your script should take 3 arguments: mysql username, mysql password
-# and database name (no argument validation needed)
-# Results must be sorted in ascending order by states.id
+"""Module: query database with MySQLdb."""
 
 import MySQLdb
 import sys
 
 if __name__ == "__main__":
+    ""
     HOST = "Localhost"
     PORT = 3306
     USER = sys.argv[1]
