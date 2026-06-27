@@ -19,7 +19,7 @@ def query_database(
     cursor = db.cursor()
 
     cursor.execute(
-        "SELECT cities.id, cities.name "
+        "SELECT cities.name "
         "FROM cities "
         "INNER JOIN states "
         "ON cities.state_id = states.id "
@@ -29,8 +29,7 @@ def query_database(
     )
     rows = cursor.fetchall()
 
-    for row in rows:
-        print(row)
+    print(", ".join([row[0] for row in rows]))
 
     cursor.close()
     db.close()
