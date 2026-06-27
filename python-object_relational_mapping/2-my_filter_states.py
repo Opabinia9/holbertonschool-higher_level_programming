@@ -5,7 +5,9 @@ import MySQLdb
 from sys import argv
 
 
-def query_database(username: str, password: str, database: str, state_name):
+def query_database(
+    username: str, password: str, database: str, state_name: str
+) -> None:
     """Query database with given parameters."""
     HOST = "Localhost"
     PORT = 3306
@@ -15,8 +17,10 @@ def query_database(username: str, password: str, database: str, state_name):
     db = MySQLdb.connect(host=HOST, port=PORT, user=USER, passwd=PASS, db=DB)
     cursor = db.cursor()
 
-    query = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(
-        state_name
+    query = (
+        "SELECT * FROM states WHERE BINARY name = '{}' ORDER BY id ASC".format(
+            state_name
+        )
     )
     cursor.execute(query)
     rows = cursor.fetchall()
