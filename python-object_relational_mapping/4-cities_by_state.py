@@ -7,24 +7,20 @@ from sys import argv
 
 def query_database(username: str, password: str, database: str) -> None:
     """Query database with given parameters."""
-    HOST = "Localhost"
-    PORT = 3306
-    USER = username
-    PASS = password
-    DB = database
     db = MySQLdb.connect(
-        host=HOST,
-        port=PORT,
-        user=USER,
-        passwd=PASS,
-        db=DB,
+        host="Localhost",
+        port=3306,
+        user=username,
+        passwd=password,
+        db=database,
     )
     cursor = db.cursor()
 
     cursor.execute(
         "SELECT cities.id, cities.name, states.name "
         "FROM cities "
-        "INNER JOIN states ON cities.state_id=states.id "
+        "INNER JOIN states "
+        "ON cities.state_id = states.id "
         "ORDER BY cities.id ASC"
     )
     rows = cursor.fetchall()
