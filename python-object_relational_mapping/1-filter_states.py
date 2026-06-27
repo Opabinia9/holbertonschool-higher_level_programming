@@ -22,7 +22,8 @@ def query_database(
     rows = cursor.fetchall()
 
     for row in rows:
-        print(row)
+        if row[1][0].isupper():
+            print(row)
 
     cursor.close()
     db.close()
