@@ -1,8 +1,10 @@
 #!/usr/bin/python3
-from model_state import Base, State
+"""Module:."""
+
 from sys import argv
 from sqlalchemy import create_engine, asc
 from sqlalchemy.orm import sessionmaker
+from model_state import Base, State
 
 if __name__ == "__main__":
     username = argv[1]
