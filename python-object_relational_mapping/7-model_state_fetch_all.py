@@ -1,0 +1,22 @@
+#!/usr/bin/python3
+"""Module:."""
+
+from sys import argv
+from model_state import Base, State
+from sqlalchemy import create_engine, asc
+from sqlalchemy.orm import sessionmaker
+
+if __name__ == "__main__":
+    username = argv[1]
+    password = argv[2]
+    database = argv[3]
+    engine = create_engine(
+        f"mysql://{username}:{password}@Localhost:3306/{database}",
+    )
+
+    Session = sessionmaker(bind=engine)
+    session = Session()
+
+    results = session.query(State).order_by(asc(State.id)).all()
+    for row in results:
+        print(row)
