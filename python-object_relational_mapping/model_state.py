@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """Module: create states table."""
 
 from sqlalchemy import Column, Integer, String
@@ -10,5 +11,5 @@ class State(Base):
     """States table."""
 
     __tablename__ = "states"
-    id = Column(Integer, primary_key=True, nullable=True)
+    id = Column(Integer, unique=True, autoincrement=True, primary_key=True)
     name = Column(String(128), nullable=False)
