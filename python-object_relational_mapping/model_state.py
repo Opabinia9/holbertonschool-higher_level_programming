@@ -14,5 +14,8 @@ class State(Base):
     id = Column(Integer, unique=True, autoincrement=True, primary_key=True)
     name = Column(String(128), nullable=False)
 
+    def __init__(self, name: str) -> None:
+        self.name = name
+
     def __repr__(self) -> str:
         return f"{self.id}: {self.name}"
