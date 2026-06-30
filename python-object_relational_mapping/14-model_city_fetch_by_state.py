@@ -12,7 +12,7 @@ if __name__ == "__main__":
     password = argv[2]
     database = argv[3]
     engine = create_engine(
-        f"mysql://{username}:{password}@Localhost:3306/{database}",
+        f"mysql://{username}:{password}@localhost:3306/{database}",
     )
 
     Session = sessionmaker(bind=engine)
