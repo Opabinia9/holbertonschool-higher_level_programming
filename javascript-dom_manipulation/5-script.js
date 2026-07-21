@@ -1,6 +1,3 @@
-function update_header() {
-	let header = document.querySelector("header");
-	header.textContent = "New Header!!!";
-}
-let header = document.querySelector("#update_header");
-header.addEventListener("click", update_header);
+document
+	.querySelector('#update_header')
+	.addEventListener('click', (event) => document.querySelector('header').textContent = 'New Header!!!';);

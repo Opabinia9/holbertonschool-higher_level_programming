@@ -1,7 +1,6 @@
 function toggleClass() {
-	let header = document.querySelector("header");
-	header.classList.toggle("green");
-	header.classList.toggle("red");
+	let header = document.querySelector('header');
+	header.classList.toggle('green');
+	header.classList.toggle('red');
 }
-let toggle_header = document.querySelector("#toggle_header");
-toggle_header.addEventListener("click", toggleClass);
+document.querySelector('#toggle_header').addEventListener('click', toggleClass);
